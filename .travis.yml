@@ -1,20 +1,28 @@
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 notifications:
   email: true
 node_js:
-  - '7'
+- '7'
 before_install:
-  - npm i -g yarn
+- npm i -g yarn
 before_script:
-  - yarn
+- yarn
 script:
-  - npm run cover
-  - npm run build
+- npm run cover
+- npm run build
 after_success:
-  - npm run semantic-release
+- npm run semantic-release
 branches:
   except:
-    - /^v\d+\.\d+\.\d+$/
+  - /^v\d+\.\d+\.\d+$/
+deploy:
+  provider: npm
+  email: uma.karimov@gmail.com
+  api_key:
+    secure: h4U3hMdPuOm3ArIUFuPTdQ3Kmkdm3kQxTHOLBuUhegJQjdzjr75xMrBDFFSHUC70F0+hENW8opsuhlWHK6fpyVfpS+fQpwmsoJzPKITVKY6OlFFheXZNJaHQxBAby1GgUNlcLc3kAFJuZq38VijwZulw/+aG53aPWeLURcNQX81dorERPcHO2M21SRGs2eC0pvw3eptbtgW/7SLFLRDkzLViOraHDNOaCRzbOcyWeHcQR6MFu6msniy+P2ulS+C22JBbaw6ktrZpD3K/9DXC9H8jg4DzeV3Q7fNCNbNMUz71ICNj+ZW2vTrifXNbzLIN4mHdOOKO4TcyswgJIxztiJd5CZhdWgr31Nem7/w6FVDessxwY+QlXzx1AQjgGgyh9NGd9EVYWT7N3gg6aqMPCZPkKn91SS2X/lKcdh9VZyNp1TzquKVgoAm633JU5q97SKjHo8GdaJabSbLJgxsd8UoFf8diUHUAWLEDWDbTImdnXGDfQDzPVLNyv8d/mngx8nlWvM7jQ3bcEd3f8CmU5QAbMcXP2XuvXIYC1Z116a4ETTQ+18a2gARH3Dux24JvYyVfSj9ejhgtXK+siJR9H/ooRA6CmaC9Gn2ejNeFjuIhRNUFnWYcOAst6Im4DnjJIW59g61imWXYGIyuup1ROkISX6K1e5YtydSr/WZ7JSI=
+  on:
+    tags: true
+    repo: umidbekkarimov/babel-plugin-material-ui
