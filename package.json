@@ -8,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "cover": "nyc npm t",
+    "cover": "nyc npm t -- --reporter=min",
     "lint": "eslint .",
     "build": "cross-env BABEL_ENV=release babel src --out-dir lib",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
