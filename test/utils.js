@@ -16,5 +16,9 @@ describe('utils', () => {
       assert.isObject(packageMap)
       assert.strictEqual(Object.keys(packageMap).length, 0)
     })
+
+    it('should throw when can not parse index file', () => {
+      assert.throws(() => createPackageMap('material-ui/LICENSE'))
+    })
   })
 })
