@@ -21,8 +21,12 @@ export const createPackageMap = (packageName) => {
         return acc
       }, {})
   } catch (e) {
-    console.error(e)
+    if (e.code === 'MODULE_NOT_FOUND') {
+      console.warn(e.message)
 
-    return {}
+      return {}
+    }
+
+    throw e
   }
 }
