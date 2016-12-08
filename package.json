@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-material-ui",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Babel plugin to cherry-pick used material-ui modules",
   "main": "lib/index.js",
   "repository": "https://github.com/umidbekkarimov/babel-plugin-material-ui.git",
@@ -10,8 +10,7 @@
     "test": "mocha --compilers js:babel-core/register",
     "cover": "nyc npm t -- --reporter=min",
     "lint": "eslint .",
-    "build": "cross-env BABEL_ENV=release babel src --out-dir lib",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "build": "cross-env BABEL_ENV=release babel src --out-dir lib"
   },
   "devDependencies": {
     "babel-cli": "6.18.0",

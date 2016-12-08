@@ -1,20 +1,17 @@
 language: node_js
 cache:
+  yarn: true
   directories:
   - node_modules
 notifications:
   email: true
 node_js:
 - '7'
-before_install:
-- npm i -g yarn
 before_script:
-- yarn
-script:
+- npm run lint
 - npm run cover
+script:
 - npm run build
-after_success:
-- npm run semantic-release
 branches:
   except:
   - /^v\d+\.\d+\.\d+$/
