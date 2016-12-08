@@ -9,7 +9,7 @@ node_js:
 - '7'
 before_script:
 - npm run lint
-- npm run cover
+- npm run codecov
 script:
 - npm run build
 branches:
