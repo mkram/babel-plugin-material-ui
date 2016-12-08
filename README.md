@@ -56,3 +56,6 @@ require("babel-core").transform("code", {
 });
 ```
 
+### Thanks
+
+Heavily inspired by [babel-plugin-date-fns](https://github.com/date-fns/babel-plugin-date-fns), [babel-plugin-lodash](https://github.com/lodash/babel-plugin-lodash) and [babel-plugin-recharts](https://github.com/recharts/babel-plugin-recharts).
