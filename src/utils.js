@@ -1,13 +1,14 @@
 import fs from 'fs'
-import _ from 'lodash'
 import path from 'path'
 import Module from 'module'
 
 export const createPackageMap = (packageName) => {
   try {
-    const mainFilePath = Module._resolveFilename(packageName, _.assign({}, new Module(), {
-      paths: Module._nodeModulePaths(process.cwd())
-    }))
+    const module = new Module()
+
+    const mainFilePath = Module._resolveFilename(packageName, {
+      ...module, paths: Module._nodeModulePaths(process.cwd())
+    })
 
     const mainFile = fs.readFileSync(mainFilePath, 'utf-8')
 

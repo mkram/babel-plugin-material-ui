@@ -3,5 +3,12 @@
     "transform-export-extensions",
     "transform-object-rest-spread",
     "transform-es2015-modules-commonjs"
-  ]
+  ],
+  "env": {
+    "release": {
+      "presets": [
+        "latest"
+      ]
+    }
+  }
 }
