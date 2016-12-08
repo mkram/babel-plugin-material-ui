@@ -1,9 +1,9 @@
 # babel-plugin-material-ui
 
 
-[![build status](https://img.shields.io/travis/umidbekkarimov/react-async-state/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/react-async-state)
-[![npm version](https://img.shields.io/npm/v/react-async-state.svg?style=flat-square)](https://www.npmjs.com/package/react-async-state)
-[![npm downloads](https://img.shields.io/npm/dm/react-async-state.svg?style=flat-square)](https://www.npmjs.com/package/react-async-state)
+[![build status](https://img.shields.io/travis/umidbekkarimov/babel-plugin-material-ui/master.svg?style=flat-square)](https://travis-ci.org/umidbekkarimov/babel-plugin-material-ui)
+[![npm version](https://img.shields.io/npm/v/babel-plugin-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-material-ui)
+[![npm downloads](https://img.shields.io/npm/dm/babel-plugin-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-material-ui)
 
 Babel plugin to cherry-pick used material-ui modules 
 
