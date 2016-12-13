@@ -17,8 +17,11 @@ describe('utils', () => {
       assert.strictEqual(Object.keys(packageMap).length, 0)
     })
 
-    it('should throw when can not parse index file', () => {
-      assert.throws(() => createPackageMap('material-ui/LICENSE'))
+    it('should return empty object when can not parse package main file', () => {
+      const packageMap = createPackageMap('foo-bar')
+
+      assert.isObject(packageMap)
+      assert.strictEqual(Object.keys(packageMap).length, 0)
     })
   })
 })

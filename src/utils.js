@@ -11,9 +11,13 @@ export const createPackageMap = (packageName) => {
     })
 
     const mainFile = fs.readFileSync(mainFilePath, 'utf-8')
+    const matches = mainFile.match(/\.\/([^']+)/g)
 
-    return mainFile
-      .match(/\.\/([^']+)/g)
+    if (!matches) {
+      return {}
+    }
+
+    return matches
       .map((item) => item.match(/\.\/([^']+)/)[1])
       .reduce((acc, item) => {
         acc[path.basename(item)] = item
