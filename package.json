@@ -7,10 +7,11 @@
   "author": "Umidbek Karimov <uma.karimov@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "all": "yarn lint && yarn cover && yarn build && yarn report-coverage",
     "test": "mocha --compilers js:babel-core/register",
-    "cover": "nyc npm t -- --reporter=min",
-    "report-coverage": "npm run cover && nyc report --reporter=lcov",
-    "codecov": "npm run report-coverage > coverage.lcov && codecov",
+    "cover": "nyc yarn test -- --reporter=min",
+    "report-coverage": "yarn cover && nyc report --reporter=lcov",
+    "codecov": "yarn report-coverage > coverage.lcov && codecov",
     "lint": "eslint .",
     "build": "cross-env BABEL_ENV=release babel src --out-dir lib"
   },
