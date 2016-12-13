@@ -1,27 +1,31 @@
 import {assert} from "chai";
-import {createPackageMap} from "../src/utils";
+import {listRequiredModules} from "../src/utils";
 
 describe('utils', () => {
-  describe('createPackageMap', () => {
+  describe('listRequiredModules', () => {
     it('should map all modules from package', () => {
-      const packageMap = createPackageMap('material-ui')
+      const modules = listRequiredModules('material-ui')
 
-      assert.isObject(packageMap)
-      assert.isAtLeast(Object.keys(packageMap).length, 1)
+      assert.isArray(modules)
+      assert.isAtLeast(modules.length, 1)
     })
 
     it('should return empty object when package not installed', () => {
-      const packageMap = createPackageMap('foo-bar')
+      const modules = listRequiredModules('foo-bar')
 
-      assert.isObject(packageMap)
-      assert.strictEqual(Object.keys(packageMap).length, 0)
+      assert.isArray(modules)
+      assert.strictEqual(modules.length, 0)
     })
 
     it('should return empty object when can not parse package main file', () => {
-      const packageMap = createPackageMap('foo-bar')
+      const modules = listRequiredModules('material-ui/LICENSE')
 
-      assert.isObject(packageMap)
-      assert.strictEqual(Object.keys(packageMap).length, 0)
+      assert.isArray(modules)
+      assert.strictEqual(modules.length, 0)
+    })
+
+    it('should throw error when package name is not valid', () => {
+      assert.throws(() => listRequiredModules(null))
     })
   })
 })

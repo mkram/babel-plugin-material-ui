@@ -14,6 +14,7 @@ Babel plugin to cherry-pick used [material-ui](http://www.material-ui.com) modul
 
 ```javascript
 import { TextField, SelectField, FlatButton } from 'material-ui'
+import { ActionAccessibility, ActionAccessible, ActionAccountBalance } from 'material-ui/svg-icons'
 ```
 
 **Out**
@@ -22,6 +23,7 @@ import { TextField, SelectField, FlatButton } from 'material-ui'
 import TextField from 'material-ui/TextField';
 import SelectField from 'material-ui/SelectField';
 import FlatButton from 'material-ui/FlatButton';
+
 ```
 
 ## Installation

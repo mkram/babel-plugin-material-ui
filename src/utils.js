@@ -1,8 +1,7 @@
 import fs from 'fs'
-import path from 'path'
 import Module from 'module'
 
-export const createPackageMap = (packageName) => {
+export const listRequiredModules = (packageName) => {
   try {
     const module = new Module()
 
@@ -13,24 +12,14 @@ export const createPackageMap = (packageName) => {
     const mainFile = fs.readFileSync(mainFilePath, 'utf-8')
     const matches = mainFile.match(/\.\/([^']+)/g)
 
-    if (!matches) {
-      return {}
-    }
-
-    return matches
-      .map((item) => item.match(/\.\/([^']+)/)[1])
-      .reduce((acc, item) => {
-        acc[path.basename(item)] = item
-
-        return acc
-      }, {})
+    return matches ? matches.map((item) => item.match(/\.\/([^']+)/)[1]) : []
   } catch (e) {
-    if (e.code === 'MODULE_NOT_FOUND') {
-      console.warn(e.message)
-
-      return {}
+    if (e.code !== 'MODULE_NOT_FOUND') {
+      throw e
     }
 
-    throw e
+    console.warn(e.message)
+
+    return []
   }
 }
