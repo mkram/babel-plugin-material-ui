@@ -6,7 +6,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/babel-plugin-material-ui.svg?style=flat-square)](https://www.npmjs.com/package/babel-plugin-material-ui)
 [![Codecov](https://img.shields.io/codecov/c/gh/umidbekkarimov/babel-plugin-material-ui.svg?style=flat-square)](https://codecov.io/gh/umidbekkarimov/babel-plugin-material-ui)
 
-Babel plugin to cherry-pick used [material-ui](http://www.material-ui.com) modules 
+Babel plugin to cherry-pick used [material-ui](http://www.material-ui.com) modules.
 
 ## Example
 
